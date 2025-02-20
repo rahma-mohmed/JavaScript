@@ -209,3 +209,27 @@ function preventSpace(e){
           e.preventDefault();
      }
 }
+
+// window.onerror = function(msg, lineNumber, url){
+//      alert(msg);
+// }
+
+function assignLocation(){
+     location.assign('http://www.google.com');
+}
+
+document.getElementById("loc").onclick = assignLocation;
+
+function getElementId(){
+     alert(event.target.id);
+}
+
+// addEventListner("event" , functionName)
+document.getElementById("b").addEventListener("click", getElementId);
+
+function removeListener(){
+     document.getElementById("b").removeEventListener("click",getElementId);
+}
+
+setTimeout(removeListener,3000);
+

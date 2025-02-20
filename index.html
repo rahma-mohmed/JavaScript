@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
      <head>
-          <script src="script.js">
-          </script>
      </head>
-     <body onclick="alert('I am body')">
+     <body>
           <script>
                // var x = 10;
                // var y = '20';
@@ -25,7 +23,6 @@
                //To delay
                // t = setTimeout(sayhello,2000);
                // window.clearTimeout(t);
-
           </script>
 
           <p>This is a test text</p>
@@ -33,12 +30,15 @@
           <button onclick="window.scrollBy(0,100);">ScrollBy</button>
           <button onclick="window.scrollTo(0,100);">ScrollTo</button> 
 
-          <button onclick="location.assign('http://www.google.com')">Go to Google</button>
-          <button id="b" onclick="alert(event.target.id)">Test</button>
-          <button id="b" onmousedown="alert(event.button)">Test</button>
+          <button id = "loc">Go to Google</button>
+          <button id="b">Test</button>
+          <button id="btn" onmousedown="alert(event.button)">Test</button>
           <div style="border: 5px solid red; width: 50px; height: 50px; margin: 20px;" onmousedown="eventFunction(event);"></div>
           <br/>
           <input type="text" onkeydown="testKeyDown(event);"/>
           <input type="text" onclick="alert('I am input'); event.stopPropagation();">
+
+          <script src="script.js">
+          </script>
      </body>
 </html>
