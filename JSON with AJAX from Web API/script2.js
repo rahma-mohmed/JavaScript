@@ -73,7 +73,9 @@ function readCookie(){
      for(var i = 0 ; i < cookiearray.length; i++){
           let key = cookiearray[i].split('=')[0];
           let value = cookiearray[i].split('=')[1];
-          document.getElementsByTagName("input")[i].value = value;
+          if(value){
+               document.getElementsByTagName("input")[i].value = value;
+          }
      }
 }
 
@@ -84,3 +86,26 @@ function deleteCookie(){
      document.cookie = "name=null;expires="+d.toUTCString();
      document.cookie = "age=null;expires="+d.toUTCString();
 }
+
+//---------------------------Web Storage-----------------------
+//window.localStorage: store data with no expiration date
+//window.sessionStorage: store data for one session 
+
+function storeInLocalStorage(){
+     localStorage.setItem("name","Rahma");
+     // localStorage.name = "Rahma";
+     // localStorage["name"] = "Rahma";
+}
+
+function retrieveFromLocalStorage(){
+     var result = localStorage.getItem("name");
+     // var result = localStorage.name;
+     // var result = localStorage["name"];
+     return result;
+}
+
+function removeFromLocalStorage(){
+     localStorage.removeItem("name");
+}
+
+//sessionStorage: equal to localStorage except that it stores the data for only one session.
