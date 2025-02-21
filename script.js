@@ -308,3 +308,16 @@ function validateForm(ev){
 //option propreties: value, text, index, selected
 //Methods: add(), remove(), focus(), blur()
 //Event: onfocus(), onblur(), onchange()
+
+function animateImage(){
+     document.getElementById("anim").style.left = "0px";
+     Timer = setInterval("MoveImage()",20)
+}
+
+function MoveImage(){
+     document.getElementById("anim").style.left = (parseInt(document.getElementById("anim").style.left)+5)+"px";
+     if(parseInt(document.getElementById("anim").style.left) > window.innerWidth){
+          // clearInterval(Timer)
+          document.getElementById("anim").style.left = 0;
+     }
+}
