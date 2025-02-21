@@ -27,10 +27,45 @@ document.getElementById("b2").onclick = ()=>{
 function Numbers(){
      console.log(arguments);
 }
-// --------------------------------------------------------------
+
+// ---------------------------self-invoking function---------------------------
 // self-invoking function => immediate invoke function expression
 // (function sum(n1, n2){
 //      alert(n1+n2);
 // })(10, 20);
 
+// ------------------------------------OOP---------------------------------------
+// Js: class-less language
+//create custom object using Literal notation, object constructor and prototyping
 
+//encapsulation
+function Person(Name="Ahmed" , Age=18){
+     var Id = 0; //private member
+     this.Name = Name;
+     this.Age = Age;
+     this.print = function(){
+          console.log("Name: "+ this.Name + " ,Age: " + this.Age);
+     }
+
+     function setId(id){ //private method
+          if(!Person.c){
+               Person.c = 0;
+          }
+          id = ++Person.c;
+          return id;
+     }
+
+     Id = setId(Id);
+
+     this.getId = function(){
+          return Id;
+     }
+}
+
+var p = new Person("Rahma",22);
+// console.log(p.Name);
+p.Name = "Ali";
+var p2 = new Person(); //Polymerphism
+p.print();
+console.log(p.getId());
+console.log(p2.getId());
