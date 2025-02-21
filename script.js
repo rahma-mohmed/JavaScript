@@ -248,4 +248,63 @@ var inputInPage = document.getElementsByTagName("input");
 
 //innerHtml: to get value of any thing except input field
 var value = document.querySelector("span+h1").innerHTML;
-alert(value);
+
+// --------------------------Images------------------------
+// propreties: name, id, src, height, width
+// onmouseover, onmousemove, onmouseout
+
+
+document.getElementById("img1").onmouseover = function(){
+     this.src = "img2.jpg";
+     // this.width = 300;
+     // this.height = 300;
+}
+
+document.getElementById("img1").onmouseout = function(){
+     this.src = "img.jpg";
+     // this.width = 200;
+     // this.height = 200;
+}
+
+// -----------------------Form------------------------------------
+//propreties: elements[], length, name, id, target(name of target window)
+//method: reset, submit
+//event: onReset(), onSubmit()
+
+function cleatTxt(inp){
+     if(inp.value == "Enter your name"){
+          inp.value = "";
+          inp.style.backgroundColor = "lightgray";
+     }
+}
+
+function validateName(inp){
+     if(inp.value.length < 3){
+          document.querySelector("#namemess").style.color = "red";
+          document.querySelector("#namemess").innerHTML = "<b>Name most be at least 3 character</b>";
+          inp.focus();
+          inp.select();
+          return false;
+     }
+     else{
+          document.querySelector("#namemess").textContent = "";
+          return true;
+     }
+}
+
+function validateForm(ev){
+     ev.preventDefault();
+     if(validateName(document.querySelector("#txtname"))){
+          ev.target.submit();
+     }
+}
+
+//Text propreties: readonly, disabled, value
+//Methods: blur(), focus(), selec()
+//Events: onfocus(), onblur(), onchange()
+
+//DropDowmList
+//select propreties: length, selectedIndex, options[], value, text, multiple
+//option propreties: value, text, index, selected
+//Methods: add(), remove(), focus(), blur()
+//Event: onfocus(), onblur(), onchange()

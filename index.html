@@ -48,8 +48,27 @@
           </span>
 
           <h1>hi</h1>
-          
-          <script src="script.js">
+
+          <img src="img.jpg" width="200px" height="200px" id="img1">
+
+          <br/> <br/>
+          <form action="thanks.html" method="get" onsubmit="validateForm(event);">
+               <label>Name</label>
+               <input id="txtname" type="text" value="Enter your name" onfocus="cleatTxt(this)" > <!-- onblur="validateName(this) -->
+               <span id="namemess"></span>
+               <br/><br/>
+
+               <label>Email</label>
+               <input id="txtemail" type="email" pattern="[A-Za-z]{3,}">
+               <br/><br/>
+
+               <label>Password</label>
+               <input id="txtpass" type="password">
+
+               <input type="submit" value="login">
+          </form>
+
+          <script src="script.js" id="img1">
           </script>
      </body>
 </html>
