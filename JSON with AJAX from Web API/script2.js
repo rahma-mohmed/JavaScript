@@ -47,3 +47,40 @@ function getProduct(){
 function showProduct(products){
      document.getElementById("prod").innerHTML = products.data.name;
 }
+
+function createCookie(){
+     var d = new Date();
+     d.setDate(d.getDate()+3);
+
+     var cookieval = document.getElementById("un").value;
+     document.cookie = "name=" + cookieval + ";expires=" + d.toUTCString();
+
+     alert("Setting cookies: "+"name= "+ cookieval);
+
+     var cookieval = document.getElementById("age").value;
+     document.cookie = "age=" + cookieval + ";expires=" + d.toUTCString();
+
+     alert("Setting cookies: "+"age= "+ cookieval);
+}
+
+function readCookie(){
+     var allcookie = document.cookie;
+     //alert("All saved cookies: "+ allcookie);
+
+     cookiearray = allcookie.split(';');
+     //alert(cookiearray.length);
+
+     for(var i = 0 ; i < cookiearray.length; i++){
+          let key = cookiearray[i].split('=')[0];
+          let value = cookiearray[i].split('=')[1];
+          document.getElementsByTagName("input")[i].value = value;
+     }
+}
+
+function deleteCookie(){
+     var d = new Date();
+     d.setDate(d.getDate()-1);
+
+     document.cookie = "name=null;expires="+d.toUTCString();
+     document.cookie = "age=null;expires="+d.toUTCString();
+}
