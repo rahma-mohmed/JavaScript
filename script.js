@@ -233,3 +233,19 @@ function removeListener(){
 
 setTimeout(removeListener,3000);
 
+// -----------------------DOM----------------------------
+//Body
+// propreties bgcolor, fgcolor, linkcolor, title, ..
+//Methods: getElementByName, getElementByTagName, getElementByClassName
+
+document.getElementById("inptxt").value = "This is a text";
+var val = document.getElementById("inptxt").value;
+
+document.getElementsByName("txt")[0].value = "This is a text input";
+
+var inputInPage = document.getElementsByTagName("input");
+// alert(inputInPage.length);
+
+//innerHtml: to get value of any thing except input field
+var value = document.querySelector("span+h1").innerHTML;
+alert(value);
