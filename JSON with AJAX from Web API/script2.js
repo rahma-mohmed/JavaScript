@@ -48,6 +48,7 @@ function showProduct(products){
      document.getElementById("prod").innerHTML = products.data.name;
 }
 
+// -----------------------------Cookies--------------------------------------
 function createCookie(){
      var d = new Date();
      d.setDate(d.getDate()+3);

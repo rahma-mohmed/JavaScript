@@ -62,10 +62,60 @@ function Person(Name="Ahmed" , Age=18){
      }
 }
 
-var p = new Person("Rahma",22);
+var p = new Person("Rahma",22); //reference type
 // console.log(p.Name);
 p.Name = "Ali";
 var p2 = new Person(); //Polymerphism
 p.print();
 console.log(p.getId());
 console.log(p2.getId());
+
+p.City = "Damietta";
+console.log(p.City);
+
+Person.prototype.City = "Assiut";
+
+Person.prototype.showName = function(){
+     console.log("my name: "+ this.Name);
+}
+
+// ---------------------------------Inheritance----------------------------------
+var Student = function(track)
+{
+     this.track = track;
+};
+
+Student.prototype = new Person(); // student inherit person
+
+var std = new Student("BI");
+// std.print();
+
+// ----------------------------Factory function-----------------------------------
+var course = function(_name, _hours){
+     let courseObj = {name:_name, hours:_hours};
+     return courseObj;
+}
+
+var crs3 = course("HTML",18);
+var crs4 = course("ES6", 30);
+
+// console.log(crs3.hours);
+
+// ----------------------------Inner Function-------------------------------------
+//if inside class called private method
+//if use this called privileged method can be accessible outside the class
+
+// ----------------------------CLosures--------------------------------------------
+function outer(){
+     var x = 20;
+     function inner(){
+          var y = 10;
+          return x*y;  // x = 20
+     };
+     return inner;
+}
+var res = outer();
+var res2 = res();
+// console.log(res2);
+
+// ----------------------------------------------------------------------------------
